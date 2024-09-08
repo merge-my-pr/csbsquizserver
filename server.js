@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -15,15 +14,13 @@ async function main() {
     console.log('db connected');
 }
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-// API Routes
 app.use('/api', quizResultRouter);
 
-// Start Server
-const port = process.env.PORT || 3001;
+
+const port = process.env.PORT;
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
