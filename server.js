@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use('/api', quizResultRouter);
 
 
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
